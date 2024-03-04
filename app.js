@@ -14,7 +14,6 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 const mongoSanitize = require("express-mongo-sanitize");
-const helmet = require('helmet');
 const MongoStore = require('connect-mongo');
 const dbUrl = process.env.DB_URL
 
@@ -63,7 +62,6 @@ app.use(session(sessionConfig));
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(helmet({contentSecurityPolicy: false}))
 passport.use(new LocalStrategy(User.authenticate()));
 
 
