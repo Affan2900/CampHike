@@ -1,9 +1,13 @@
 const mongoose = require("mongoose");
 const Campground = require("../models/campground");
 const cities = require("./cities");
+require('dotenv').config();
 const { places, descriptors } = require("./seedHelpers");
 
-mongoose.connect("mongodb://127.0.0.1:27017/camp-hike");
+mongoose.connect(process.env.DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
 db.once("open", () => {
@@ -18,7 +22,7 @@ const seedDB = async () => {
     const random = Math.floor(Math.random() * 55);
     const price = Math.floor(Math.random()*4000)+10;
     const camp = new Campground({
-      author: '65df2542704c291a70aa272a',
+      author: '68df7341b70ed13ddfab61e7',
       location: `${cities[random].city}, ${cities[random].province}`,
       title: `${sample(descriptors)} ${sample(places)}`,
       images :  [

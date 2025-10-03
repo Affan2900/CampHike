@@ -34,7 +34,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
-app.use(mongoSanitize()); //To prevent from Mongo Injections
+app.use(mongoSanitize()); 
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,

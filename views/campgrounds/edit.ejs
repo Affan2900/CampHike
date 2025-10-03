@@ -15,8 +15,8 @@
           class="form-control"
           type="text"
           id="title"
-          name="campground[title]"
-          placeholder="enter name"
+          name="campground[title]" 
+          placeholder="Affan"
           value="<%=campground.title%>"
           required
         />
@@ -28,29 +28,15 @@
           class="form-control"
           type="text"
           id="location"
-          name="campground[location]"
-          placeholder="enter location"
+          name="campground[location]" 
+          placeholder="Lahore, Pakistan"
           value="<%=campground.location%>"
           required
         />
         <div class="valid-feedback">Looks good</div>
       </div>
 
-      <input type="file" name="image" id="" />
-
-      <!-- <div class="mb-3">
-        <label class="form-label" for="image">Image Url</label>
-        <input
-          class="form-control"
-          type="text"
-          id="image"
-          name="campground[image]"
-          placeholder="enter image url"
-          value=""
-          required
-        />
-        <div class="valid-feedback">Looks good</div>
-      </div> -->
+      <input type="file" name="image" id="" multiple />
 
       <div class="mb-3">
         <label class="form-label" for="description">Description</label>
@@ -58,13 +44,11 @@
           class="form-control"
           type="text"
           id="description"
-          name="campground[description]"
-          placeholder="enter description"
+          name="campground[description]" 
           required
         >
-                <%=campground.description%>
-            </textarea
-        >
+          <%=campground.description%>
+        </textarea>
         <div class="valid-feedback">Looks good</div>
       </div>
       <div class="mb-3">
@@ -76,7 +60,7 @@
             class="form-control"
             aria-label="Amount (to the nearest dollar)"
             id="price"
-            name="campground[price]"
+            name="campground[price]" 
             value="<%=campground.price%>"
             required
           />
